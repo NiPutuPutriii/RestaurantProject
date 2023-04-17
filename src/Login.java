@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class Login {
+    static User users = new User();
+    static Scanner input = new Scanner(System.in);
     public static boolean Logins() {
-        static User users = new User();
-        static Scanner input = new Scanner(System.in);
         boolean oke = false;
         users.setUsername("admin");
         users.setPassword("admin");
