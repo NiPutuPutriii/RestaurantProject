@@ -11,21 +11,26 @@ public class customerMenu {
         System.out.println("||  [1] Order           ||  [3] Find Resto     ||");
         System.out.println("||  [2] Check Order     ||  [4] Back to Login  ||");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.print("Choose Menu: ");
-        int pilihan = Integer.parseInt(input.nextLine());
-        if (pilihan == 3) {
-            Resto.showResto();
+        System.out.print("                  Choose Menu>> ");
+        int option = Integer.parseInt(input.nextLine()); //mengubah string dalam option menjadi int
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        if (option == 1) {
+            Orders.addPesanan();//Pemanggilan method addPesanan pada kelas Orders
             Customer();
-        } else if (pilihan == 1) {
-            Orders.addPesanan();
-            Customer();
-        } else if (pilihan == 2) {
+        } else if (option == 2) {
             Orders.showPesanan();
             Customer();
-        } else if (pilihan == 4) {
-            menus.menu();
+        } else if (option == 3) {
+            Resto.showResto();
+            Customer();
+        } else if (option == 4) {
+            menus.menu();//Pemanggilan method menu pada kelas MealMate
         } else {
-            System.exit(0);
+            System.out.println("\n                  !!A L E R T!!                  ");
+            System.out.println("              Pilihan Tidak Sesuai!              ");
+            System.out.println("               Silakan Input Ulang               ");
+            Customer();
         }
     }
 }
