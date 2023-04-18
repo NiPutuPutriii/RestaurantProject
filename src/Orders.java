@@ -9,7 +9,7 @@ public class Orders {
     static String kodeResto;
     static Scanner input = new Scanner(System.in);
     public static void addPesanan() {
-        int jarak = (int) (Math.random()*3) + 2;
+        int jarak = (int) (Math.random()*3) + 2; //menentukan jarak lokasi restoran
         System.out.print("Masukan kode resto: ");
         kodeResto = input.nextLine();
         Resto.showMenu(kodeResto);
@@ -20,7 +20,7 @@ public class Orders {
         String[] kode = new String[100];
         String[] kode_menu = new String[100];
         int total = 0;
-        // proses pemesanan
+        // Proses pemesanan untuk customer
         StringTokenizer stringtok = null;
         for (int i = 0; i < menuList.size(); i++) {
             stringtok = new StringTokenizer(menuList.toArray()[i].toString().replace("[", "").replace("]", ""), ",");
@@ -39,7 +39,7 @@ public class Orders {
             kuantitas[i] = Integer.parseInt(input.nextLine());
             if (kode_menu[i].equals(kode[i])) {
                 sub_total[i] = kuantitas[i] * harga[i];
-                System.out.println("Sub Total: "+sub_total[i]);
+                System.out.println("Sub Total: " + sub_total[i]);
             }
             total += sub_total[i];
             orderList.add(Arrays.asList(jarak, kodeResto, kode_menu[i], kuantitas[i], sub_total[i]));
@@ -48,6 +48,7 @@ public class Orders {
     }
     public static void showPesanan() {
         StringTokenizer stringtok = null;
+        // Proses menampilkan pesanan ynag telah dilakukan
         for (int i = 0; i < orderList.size(); i++) {
             stringtok = new StringTokenizer(orderList.toArray()[i].toString().replace("[", "").replace("]", ""), ",");
             System.out.print("Jarak: ");
@@ -61,8 +62,8 @@ public class Orders {
             System.out.print("Sub Total: ");
             System.out.println(stringtok.nextToken());
         }
-        System.out.println(orderList.toString());
-        System.out.println(orderList.size());
+        /*System.out.println(orderList.toString());
+        System.out.println(orderList.size());*/
     }
 
 }
