@@ -3,7 +3,7 @@ public class adminMenu {
     static Scanner input = new Scanner(System.in);
     static MealMate menus = new MealMate();
     static Resto adding = new Resto();
-    public static void Admin() {
+    public void Admin() {
         int option;
         System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("             > A D M I N   M E N U <             ");
@@ -11,10 +11,11 @@ public class adminMenu {
         System.out.println("||  [1] Tambah Resto    ||  [3] Lihat Resto    ||");
         System.out.println("||  [2] Hapus Resto     ||  [4] Back to Login  ||");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.print("Choose Menu: ");
-        option = Integer.parseInt(input.nextLine());
+        System.out.print("                  Choose Menu>> ");
+        option = Integer.parseInt(input.nextLine()); //mengubah string dalam option menjadi int
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         if (option == 1) {
-            adding.addResto();
+            adding.addResto();//Pemanggilan method addResto pada kelas Resto
             Admin();
         } else if (option == 2) {
             adding.deleteResto();
@@ -23,9 +24,12 @@ public class adminMenu {
             adding.showResto();
             Admin();
         } else if (option == 4) {
-            menus.menu();
+            menus.menu();//Pemanggilan method menu pada kelas MealMate
         } else {
-            System.exit(0);
+            System.out.println("\n                  !!A L E R T!!                  ");
+            System.out.println("              Pilihan Tidak Sesuai!              ");
+            System.out.println("               Silakan Input Ulang               ");
+            Admin();
         }
     }
 }
