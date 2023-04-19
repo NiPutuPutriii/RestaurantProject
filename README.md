@@ -11,6 +11,11 @@ Project ini dibuat guna menghasilkan sebuah rancangan program pemesanan makanan 
 # UML (Unified Modeling Language)
 UML lazimnya difungsikan sebagai pemodelan guna memvisualisasikan struktur dari desain sistem program. Berikut akan dipaparkan UML dari program ini.
 
+![image](https://user-images.githubusercontent.com/113573080/232951188-ee7f483a-f86f-4d88-b9fd-e493ebfe3eaf.png)
+
+Seperti apa yang terlihat pada lampiran gambar di atas, diagram tersebut terklasifikasi atas sejumlah kelas, yaitu "Resto", "Orders", "customerMenu", "adminMenu", "MealMate", "User", dan "Login". Masing-masing kelas tersebut tentunya memiliki atribut dan method guna memvisualisasikan fungsionalitas dalam sistem program.
+Hubungan antara kelas diwakili oleh panah dan simbol pada diagram, sebagai contoh kelas "Orders" dan "customerMenu" memiliki asosiasi dengan kelas "Resto", yang menunjukkan keterkaitan antara pesanan yang akan dilakukan customer dan restoran yang dipilih. Selain itu, kelas "adminMenu" dan "customerMenu" memiliki keteerhubungan dengan kelas "MealMate", di mana kelas tersebut sebagai kelas utama dalam sistem ini.
+
 # Kode Program dan Output
 ## 1.Login
 ![image](https://user-images.githubusercontent.com/113573080/232800484-1f3d3351-0a01-4b65-aff1-78da26168f03.png)
